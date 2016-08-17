@@ -6,9 +6,7 @@ var translateWord = function(word){
   } else {
     var suffix = "";
     for(var i = 0; i < word.length; i++){
-      if(!vowelArray.includes(word.charAt(i))){
-        suffix += word.charAt(i);
-      } else {
+      if(vowelArray.includes(word.charAt(i)) || (word.charAt(i)==='y' && i > 0)){
         if(word.charAt(i) === vowelArray[4] && word.charAt(i-1) === 'q'){
           suffix += word.charAt(i);
           word = word.slice(i+1);
@@ -16,6 +14,8 @@ var translateWord = function(word){
           word = word.slice(i);
         }
         break;
+      } else {
+        suffix += word.charAt(i);
       }
     }
     word += (suffix + "ay");
