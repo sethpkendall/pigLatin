@@ -27,10 +27,22 @@ var toPigLatin = function(words){
   words = words.toLowerCase();
   var wordArray = words.split(" ");
   //console.log(wordArray);
-  if(!words.match(/[^a-z']/)){
-    words = translateWord(words);
-  }
-  return words;
+  var wordArray2 = wordArray.map(function(word){
+    if(!word.match(/[^a-z'.,;!?:-_]/)){
+      var wordEnd = "";
+      if(word.slice(-1).match(/['.,;!?:]/))
+      {
+        wordEnd = word.slice(-1);
+        word = word.slice(0, -1);
+      }
+      return translateWord(word)+wordEnd;
+    } else {
+      return word;
+    }
+  });
+  console.log(wordArray2);
+  wordArray2[0] = wordArray2[0].charAt(0).toUpperCase() + wordArray2[0].slice(1);
+  return wordArray2.join(" ");
 };
 
 //<!-- Front End  -->
