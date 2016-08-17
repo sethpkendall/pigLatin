@@ -1,27 +1,34 @@
 //<!-- Back End -->
-var toPigLatin = function(words){
+var translateWord = function(word){
   var vowelArray = ["a", "e", "i", "o", "u"];
-  words = words.toLowerCase();
-  var wordArray = words.split(" ");
-  console.log(wordArray);
-  if(vowelArray.includes(words.charAt(0))){
-    words += "ay";
+  if(vowelArray.includes(word.charAt(0))){
+    word += "ay";
   } else {
     var suffix = "";
-    for(var i = 0; i < words.length; i++){
-      if(!vowelArray.includes(words.charAt(i))){
-        suffix += words.charAt(i);
+    for(var i = 0; i < word.length; i++){
+      if(!vowelArray.includes(word.charAt(i))){
+        suffix += word.charAt(i);
       } else {
-        if(words.charAt(i) === vowelArray[4] && words.charAt(i-1) === 'q'){
-          suffix += words.charAt(i);
-          words = words.slice(i+1);
+        if(word.charAt(i) === vowelArray[4] && word.charAt(i-1) === 'q'){
+          suffix += word.charAt(i);
+          word = word.slice(i+1);
         } else {
-          words = words.slice(i);
+          word = word.slice(i);
         }
         break;
       }
     }
-    words += (suffix + "ay");
+    word += (suffix + "ay");
+  }
+  return word;
+}
+
+var toPigLatin = function(words){
+  words = words.toLowerCase();
+  var wordArray = words.split(" ");
+  //console.log(wordArray);
+  if(!words.match(/[^a-z']/)){
+    words = translateWord(words);
   }
   return words;
 };

@@ -33,8 +33,8 @@ For words beggining with the letter "y" the letter "y" is considered a consonant
 * Example Output: akyay
 
 For words beginning with "qu," "qu" is considered a consonant group.
-* Example Input: quail
-* Example Output: ailquay
+* Example Input: quack
+* Example Output: ackquay
 
 If the first group of consonants includes "qu" the "qu" is also treated as a part of the consonant group.
 * Example Input: squeal
