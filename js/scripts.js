@@ -26,9 +26,8 @@ var translateWord = function(word){
 var toPigLatin = function(words){
   words = words.toLowerCase();
   var wordArray = words.split(" ");
-  console.log(wordArray);
   var wordArray2 = wordArray.map(function(word){
-    if(word && !word.match(/[^a-z'.,;!?:-_]/)){
+    if(word && !word.match(/[^a-z'.,;!?:\-_]/)){
       var wordEnd = "";
       if(word.slice(-1).match(/['.,;!?:]/))
       {
@@ -40,7 +39,6 @@ var toPigLatin = function(words){
       return word;
     }
   });
-  console.log(wordArray2);
   wordArray2[0] = wordArray2[0].charAt(0).toUpperCase() + wordArray2[0].slice(1);
   return wordArray2.join(" ");
 };
@@ -52,7 +50,6 @@ $(document).ready(function(){
     var words = $("input#words").val();
     if(words){
       var result = toPigLatin(words);
-      console.log(result);
       $("#result").text(result);
     } else {
       alert("Please enter a word or words in the box");
