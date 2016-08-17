@@ -50,7 +50,11 @@ $(document).ready(function(){
   $("form#pig-latin").submit(function(event) {
     event.preventDefault();
     var words = $("input#words").val();
-    var result = toPigLatin(words);
-    $("#result").text(result);
+    if(words){
+      var result = toPigLatin(words);
+      $("#result").text(result);
+    } else {
+      alert("Please enter a word or words in the box");
+    }
   });
 });
