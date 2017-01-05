@@ -1,4 +1,5 @@
 # _Piglatin_
+###_Epicodus Pair Project , 9.17.2016_
 
 #### By _Ewa Manek and Seth Kendall_
 
@@ -54,13 +55,14 @@ For multiple word input the program will apply the above rules regardless of cap
 * _Open the index.html file a browser of your choice_
 * _Open the console to confirm that javascript and jQuery are running_
 
-## GitHub link
-https://github.com/rloos289/Template
+## Known Bugs
+No known bugs.
+
+## Contact Information
+Contact me at sethpkendall@gmail.com
 
 ## Licensing
 
-* MIT
+*This product can be used in accordance with the provisions under its MIT license.*
 
 copyright (c) 2016 **_Ewa Manek and Seth Kendall_**
-
-Template copyright (c) 2016 **_Ryan Loos_**
